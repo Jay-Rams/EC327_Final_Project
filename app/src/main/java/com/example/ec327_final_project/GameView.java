@@ -21,6 +21,7 @@ import com.example.ec327_final_project.R;
 import java.util.ArrayList;
 
 public class GameView extends SurfaceView implements Runnable {
+    //adding variables
     int screenX;
     int countHit;
     boolean flag;
