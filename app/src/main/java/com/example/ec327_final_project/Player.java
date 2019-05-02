@@ -14,7 +14,7 @@ public class Player {
     private int x;
     private int y;
     private int speed = 0;
-    private boolean boosting;
+    private boolean moving;
     private final int GRAVITY = -10;
     private int maxY;
     private int minY;
@@ -31,22 +31,20 @@ public class Player {
         bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.player);
         maxY = screenY - bitmap.getHeight();
         minY = 0;
-        boosting = false;
+        moving = false;
 
         //initializing rect object
         detectCollision =  new Rect(x, y, bitmap.getWidth(), bitmap.getHeight());
     }
 
-    public void setBoosting() {
-        boosting = true;
-    }
+    public void setMoving() { moving = true; }
 
-    public void stopBoosting() {
-        boosting = false;
+    public void stopMoving() {
+        moving = false;
     }
 
     public void update() {
-        if (boosting) {
+        if (moving) {
             speed += 5;
         } else {
             speed -= 5;
