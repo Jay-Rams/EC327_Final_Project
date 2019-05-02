@@ -16,13 +16,12 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
 
-import com.example.ec327finalprojectv2.R;
+import com.example.ec327_final_project.R;
 
 import java.util.ArrayList;
 
 public class GameView extends SurfaceView implements Runnable {
     int screenX;
-    int countMiss;
     int countHit;
     boolean flag;
     private boolean isGameOver;
@@ -46,10 +45,10 @@ public class GameView extends SurfaceView implements Runnable {
     //Adding enemies object array
     private Enemy[] enemies;
 
-    //Adding 3 enemies you may increase the size
+    //Adding 5 enemies to display on screen at one time
     private int enemyCount = 5;
 
-    private int score = 3;
+    private int life = 3;
 
     public GameView(Context context, int screenX, int screenY) {
         super(context);
@@ -58,10 +57,11 @@ public class GameView extends SurfaceView implements Runnable {
         surfaceHolder = getHolder();
         paint = new Paint();
 
+        //creating a background that will be able to move
         bg = new background(BitmapFactory.decodeResource(getResources(), R.drawable.level_bg));
         bg.setVector(-5);
 
-        //initializing enemy object array
+        //initializing an array of enemy objects
         enemies = new Enemy[enemyCount];
         for(int i=0; i<enemyCount; i++){
             enemies[i] = new Enemy(context, screenX, screenY);
@@ -69,7 +69,6 @@ public class GameView extends SurfaceView implements Runnable {
 
         this.screenX = screenX;
         countHit = 0;
-        countMiss= 0;
         isGameOver = false;
 
     }
@@ -86,7 +85,6 @@ public class GameView extends SurfaceView implements Runnable {
     private void update() {
         player.update();
 
-        //updating the enemy coordinate with respect to player speed
         for(int i=0; i<enemyCount; i++){
             if(enemies[i].getX() == screenX){
                 flag = true;
@@ -96,15 +94,11 @@ public class GameView extends SurfaceView implements Runnable {
 
             enemies[i].update(player.getSpeed());
 
-           // if(player.getDetectCollision().exactCenterY() == enemies[i].getDetectCollision().exactCenterY()){
-           //     score++;
-           // }
-
-
+            //recognizing the collisions between player and enemies to check if life decrements
             if(Rect.intersects(player.getDetectCollision(),enemies[i].getDetectCollision())){
                 enemies[i].setX(-200);
                 countHit++;
-                score--;
+                life--;
                 if(countHit==3){
                     playing = false;
                     isGameOver = true;
@@ -117,21 +111,16 @@ public class GameView extends SurfaceView implements Runnable {
         if (surfaceHolder.getSurface().isValid()) {
             canvas = surfaceHolder.lockCanvas();
 
-            final float scaleFactorX = getWidth()/WIDTH;
-            final float scaleFactorY = getHeight()/HEIGHT;
-
             if(canvas != null) {
-                //final int savedState = canvas.save();
-                //canvas.scale(scaleFactorX,scaleFactorY);
                 bg.draw(canvas);
-                //canvas.restoreToCount(savedState);
             }
 
             paint.setTextSize(75);
             paint.setColor(Color.WHITE);
             canvas.drawText("TIME: " + (int)(System.currentTimeMillis()-start)/1000, 1400, 225 + paint.ascent(),paint);
-            canvas.drawText("LIVES: " + score, 100, 225 + paint.ascent(),paint);
+            canvas.drawText("LIVES: " + life, 100, 225 + paint.ascent(),paint);
 
+            //drawing the player to the screen
             canvas.drawBitmap(
                     player.getBitmap(),
                     player.getX(),
@@ -148,12 +137,11 @@ public class GameView extends SurfaceView implements Runnable {
                 );
             }
 
+            //if isGameOver is true, the game ends and calls the GameOver activity
             if(isGameOver){
                 paint.setTextSize(150);
                 paint.setTextAlign(Paint.Align.CENTER);
-                //long fin = (System.currentTimeMillis()-start)/1000;
                 Intent myIntent = new Intent(getContext().getApplicationContext(), GameOver.class);
-                //myIntent.putExtra("final",fin);
                 getContext().startActivity(myIntent);
             }
 

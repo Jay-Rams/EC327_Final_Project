@@ -8,7 +8,7 @@
     android:background="@drawable/title_screen_bg"
     android:gravity="center"
     android:screenOrientation="landscape"
-    tools:context="com.example.ec327_final_project.MainActivity">
+    tools:context=".MainActivity">
 
     <ImageButton
         android:id="@+id/startButton"

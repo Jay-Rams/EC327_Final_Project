@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.ec327_final_project.MainActivity;
-import com.example.ec327finalprojectv2.R;
+import com.example.ec327_final_project.R;
 
 public class GameOver extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,11 +22,6 @@ public class GameOver extends AppCompatActivity implements View.OnClickListener 
 
         restartButton.setOnClickListener(this);
         titleButton.setOnClickListener(this);
-
-        //Bundle extras = getIntent().getExtras();
-        //if(extras != null) {
-            //long value = extras.getLong("final");
-        //}
 
     }
 

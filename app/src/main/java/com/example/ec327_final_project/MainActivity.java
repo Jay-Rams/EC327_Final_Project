@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.ec327finalprojectv2.R;
+import com.example.ec327_final_project.R;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
 

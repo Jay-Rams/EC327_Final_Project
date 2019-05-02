@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/level_bg"
-    tools:context="com.example.ec327_final_project.GameActivity">
+    tools:context=".GameActivity">
 
 </android.support.constraint.ConstraintLayout>

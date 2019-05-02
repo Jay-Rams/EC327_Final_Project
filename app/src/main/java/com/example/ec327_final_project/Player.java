@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.provider.SyncStateContract;
 
-import com.example.ec327finalprojectv2.R;
+import com.example.ec327_final_project.R;
 
 public class Player {
     private Bitmap bitmap;
