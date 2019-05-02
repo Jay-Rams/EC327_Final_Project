@@ -1,6 +1,5 @@
 package com.example.ec327_final_project;
 
-import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

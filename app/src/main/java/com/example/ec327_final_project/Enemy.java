@@ -5,8 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
-import com.example.ec327_final_project.R;
-
 import java.util.Random;
 
 public class Enemy {
