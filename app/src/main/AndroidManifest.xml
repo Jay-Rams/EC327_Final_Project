@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ec327finalprojectv2">
+    package="com.example.ec327_final_project">
 
     <application
         android:allowBackup="true"
@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GameOver" />
-        <activity android:name=".GameActivity" />
+        <activity android:name=".GameOver"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".GameActivity"
+            android:screenOrientation="landscape"/>
         <activity
             android:name="com.example.ec327_final_project.MainActivity"
             android:screenOrientation="landscape">

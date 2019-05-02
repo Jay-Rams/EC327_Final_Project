@@ -16,7 +16,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
 
-import com.example.ec327finalprojectv2.R;
+import com.example.ec327_final_project.R;
 
 import java.util.ArrayList;
 

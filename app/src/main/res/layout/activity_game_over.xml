@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/level"
+    android:orientation="horizontal"
+    android:screenOrientation="landscape"
     tools:context="com.example.ec327_final_project.GameOver">
 
     <ImageButton
@@ -12,14 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignWithParentIfMissing="false"
+        android:layout_below="@+id/titleButton"
+        android:layout_alignParentStart="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
         android:layout_alignParentRight="false"
         android:layout_alignParentBottom="false"
         android:layout_centerInParent="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_below="@+id/titleButton"
         android:background="@android:color/transparent"
         android:padding="10dp"
         android:src="@drawable/restart_button" />
@@ -29,13 +31,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentStart="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
         android:layout_alignParentRight="false"
         android:layout_alignParentBottom="false"
         android:layout_centerInParent="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
         android:background="@android:color/transparent"
         android:padding="10dp"
         android:src="@drawable/title_screen_button" />
@@ -52,8 +54,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text=""
-        />
+        android:text="" />
 
 
 </RelativeLayout>
