@@ -9,3 +9,7 @@ In the top bar in Android Studio, click the green play "Run App" button, and for
 Wait for the simulator to open and the app to automatically launch to the start screen.
 
 In the white side bar of the simulator, click 4th option down to rotate the phone 180 degrees to the left to view the app in the correct orientation.
+
+Once the app has loaded, select day mode by clicking on the sun button or night mode by clicking on the moon button. Start the app by pressing the start button.
+
+Once the game has started, press the screen to move the knight upward and release to let the knight move downward to avoid the enemies.
